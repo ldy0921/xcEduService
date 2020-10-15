@@ -1,0 +1,13 @@
+package com.xuecheng.framework.domain.cms.response;
+
+import com.xuecheng.framework.domain.cms.CmsSite;
+import com.xuecheng.framework.model.response.ResponseResult;
+import com.xuecheng.framework.model.response.ResultCode;
+
+public class CmsSiteResult extends ResponseResult {
+    CmsSite cmsSite;
+    public CmsSiteResult(ResultCode resultCode, CmsSite cmsSite) {
+        super(resultCode);
+        this.cmsSite = cmsSite;
+    }
+}
