@@ -12,9 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
-
-import java.util.Objects;
-
 @Service
 public class PageService {
 
@@ -60,7 +57,9 @@ public class PageService {
     }
 
     public CmsPageResult add(CmsPage cmsPage) {
-        CmsPage cmsPage1 = cmsPageRepository.findByPageNameAndPageWebPathaAndSiteId(cmsPage.getPageName(), cmsPage.getSiteId(), cmsPage.getPageWebPath());
+        CmsPage cmsPage1 = cmsPageRepository.findByPageNameAndSiteIdAndPageWebPath(cmsPage.getPageName(),
+                cmsPage.getSiteId(),
+                cmsPage.getPageWebPath());
 
         if (cmsPage1 == null) {
             cmsPage.setPageId(null);
